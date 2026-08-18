@@ -1,0 +1,44 @@
+{
+  "studyId": "free-public-ai-polarization-v1",
+  "researchQuestion": "When does free universal AI access fail to reduce Korean income polarization?",
+  "claimLevel": "model-conditional comparative statics",
+  "population": {
+    "profile": "data/nvidia-korea-profile.json",
+    "officialCalibration": [
+      "KOSIS age×sex×region",
+      "Regional Employment Survey education×occupation×region",
+      "KLIPS income and occupation transition moments"
+    ],
+    "sizes": [250, 500, 1000, 2000]
+  },
+  "network": {
+    "topologies": ["homophilous-knn", "small-world", "degree-preserving-randomized"],
+    "homophily": [0.2, 0.5, 0.8],
+    "peerLearning": [0.0, 0.1, 0.3]
+  },
+  "policies": [
+    "market",
+    "free-access",
+    "access-plus-training",
+    "job-transition",
+    "citizen-ownership",
+    "integrated"
+  ],
+  "phaseScan": {
+    "premiumQualityGap": [0.0, 0.2, 0.4, 0.6],
+    "occupationalMobility": [0.1, 0.3, 0.5, 0.7]
+  },
+  "design": {
+    "seeds": [2026, 2027, 2028, 2029, 2030],
+    "pairedCommonRandomNumbers": true,
+    "horizons": [15, 30],
+    "requiredChecks": ["ablation", "Morris", "Sobol", "finite-size", "hysteresis"]
+  },
+  "primaryMetrics": [
+    "Wolfson polarization",
+    "middle-income share",
+    "effective AI service gap",
+    "vulnerable employment",
+    "top-decile AI-capital share"
+  ]
+}

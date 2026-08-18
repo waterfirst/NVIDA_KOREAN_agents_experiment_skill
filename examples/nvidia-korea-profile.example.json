@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "source": "NVIDIA Korea schema example — not an actual NVIDIA distribution",
+  "dataset": "nvidia/Nemotron-Personas-Korea",
+  "datasetVersion": "1.0",
+  "license": "CC BY 4.0",
+  "sampleSize": 600,
+  "retainedSampleSize": 600,
+  "suppressedSampleSize": 0,
+  "sourceDigestSha256": "7b5f82a0f8a7de483c0f218128f7b78c4f28eaac90621a540f14d97f078cb356",
+  "aggregation": {
+    "dimensions": ["ageGroup", "sex", "region", "education", "occupation"],
+    "regionMode": "province",
+    "occupationMode": "broad",
+    "minimumCell": 5
+  },
+  "dataPolicy": {
+    "retainedSourceFields": ["age", "sex", "province", "education_level", "occupation"],
+    "discarded": ["uuid", "persona and all *_persona fields", "narrative attributes"],
+    "individualRecordsExported": false
+  },
+  "strata": [
+    {"ageGroup": "19-29", "sex": "여성", "region": "서울", "education": "대학교", "occupation": "사무·행정", "count": 100},
+    {"ageGroup": "30-39", "sex": "남성", "region": "경기", "education": "대학교", "occupation": "전문가·기술직", "count": 100},
+    {"ageGroup": "40-49", "sex": "여성", "region": "부산", "education": "고등학교", "occupation": "판매", "count": 100},
+    {"ageGroup": "50-64", "sex": "남성", "region": "충남", "education": "고등학교", "occupation": "장치·기계·생산", "count": 140},
+    {"ageGroup": "65-74", "sex": "여성", "region": "전남", "education": "중학교", "occupation": "서비스·돌봄", "count": 100},
+    {"ageGroup": "75-99", "sex": "여성", "region": "강원", "education": "초등학교", "occupation": "농림어업", "count": 60}
+  ],
+  "limitations": [
+    "This file demonstrates the schema and is not sampled from the NVIDIA dataset.",
+    "Do not use it to estimate Korean population distributions or policy effects."
+  ]
+}

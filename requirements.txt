@@ -1,0 +1,2 @@
+# Optional: required only for direct Hugging Face streaming.
+datasets>=3.0,<5.0
